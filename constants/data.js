@@ -2,7 +2,7 @@ const userData = {
   githubUsername: "austinthaldorfhuelsbeck",
   name: "Austin Thaldorf-Huelsbeck",
   designation: "Software Engineer",
-  avatarUrl: "/avatar.png",
+  avatarUrl: "/ath.jpg",
   email: "austin@thaldorfhuelsbeck.com",
   phone: "206.451.3834",
   address: "Seattle, Washington",
@@ -10,51 +10,41 @@ const userData = {
     {
       title: "Vowsuite",
       link: "https://vowsuite.com",
-      imgUrl: "/tmk.jpg",
+      imgUrl: "/vowsuite.png",
     },
     {
       title: "cathyloerzel.com",
-      link: "https://placeholdertech.in",
-      imgUrl: "/placeholdertech.png",
+      link: "https://cathyloerzel.com",
+      imgUrl: "/cathyloerzel.png",
     },
     {
       title: "FooTube",
-      link: "https://manuarora.in",
-      imgUrl: "/portfolio.png",
+      link: "https://footube.in",
+      imgUrl: "/footube.png",
     },
     {
       title: "Periodic Tables",
       link: "https://covidrescue.co.in",
-      imgUrl: "/covidrescue.png",
+      imgUrl: "/periodic-tables.png",
     },
     {
       title: "Flashcard-o-matic",
       link: "https://algochurn.com",
-      imgUrl: "/algochurn.png",
+      imgUrl: "/flashcard-o-matic.png",
     },
     {
       title: "Pomodoro",
       link: "https://play.placeholdertech.in",
-      imgUrl: "/playground.png",
-    },
-    {
-      title: "Feedmeback",
-      link: "https://feedmeback.vercel.app",
-      imgUrl: "/feedmeback.png",
-    },
-    {
-      title: "Devmedium",
-      link: "https://devmedium.vercel.app",
-      imgUrl: "/devmedium.png",
+      imgUrl: "/pomodoro-timer.png",
     },
   ],
   about: {
     title:
-      "I'm a self-taught JavaScript Developer, specialized in frontend and skilled in full-stack development. Passionate about creating web solutions that solve problems and enhance users' lives",
+      `I\'m a self-taught JavaScript Developer, specialized in frontend and skilled in full-stack development. Passionate about creating web solutions that solve problems and enhance users\' lives`,
     description: [
-      `Embarking on a self-taught journey into programming, I've honed my skills over 5 years to become a proficient JavaScript Developer, specializing in frontend with full-stack capabilities. I utilize React, Next.js, Node.js, and more to build engaging web applications.`,
+      `Embarking on a self-taught journey into programming, I\'ve honed my skills over 5 years to become a proficient JavaScript Developer, specializing in frontend with full-stack capabilities. I utilize React, Next.js, Node.js, and more to build engaging web applications.`,
       `My portfolio showcases diverse projects, from custom sites like cathyloerzel.com to Vowsuite, a video hosting platform for videographers, demonstrating my ability to turn client needs into effective web solutions. My contributions to open-source and my role as a Systems Administrator have refined my problem-solving skills and adaptability in the tech landscape.`,
-      `Passionate about leveraging technology to address real-world problems, I offer a blend of technical expertise, creative problem-solving, and a drive to achieve exceptional results. Working independently or in a team, my aim is to create web applications that are both technically robust and meaningful to users. As I seek opportunities to grow and contribute, I am eager to bring my skills and passion to a team as dedicated as I am to pushing the boundaries of what's possible on the web.`,
+      `Passionate about leveraging technology to address real-world problems, I offer a blend of technical expertise, creative problem-solving, and a drive to achieve exceptional results. Working independently or in a team, my aim is to create web applications that are both technically robust and meaningful to users. As I seek opportunities to grow and contribute, I am eager to bring my skills and passion to a team as dedicated as I am to pushing the boundaries of what\'s possible on the web.`,
     ],
     currentProject: "Vowsuite",
     currentProjectUrl: "https://vowsuite.com",
@@ -113,12 +103,9 @@ const userData = {
   resumeUrl:
     "https://drive.google.com/file/d/1xmE3BOmgM7TAOOgVp36xQIQvYDntDYoo/view?usp=sharing",
   socialLinks: {
-    instagram: "https://instagram.com/maninthere",
-    twitter: "https://twitter.com/mannupaaji",
-    linkedin: "https://linkedin.com/in/manuarora28",
-    github: "https://github.com/manuarora700",
-    facebook: "https://facebook.com/",
-    peerlist: "https://peerlist.io/manuarora",
+    linkedin: "https://linkedin.com/in/austinthaldorfhuelsbeck",
+    github: "https://github.com/austinthaldorfhuelsbeck",
+    peerlist: "https://peerlist.io/athdev",
   },
 };
 

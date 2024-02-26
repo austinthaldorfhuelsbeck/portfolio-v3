@@ -1,4 +1,3 @@
-import React from "react";
 import userData from "@constants/data";
 
 export default function Projects() {
@@ -14,6 +13,7 @@ export default function Projects() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-20 pb-40">
           {userData.projects.map((proj, idx) => (
             <ProjectCard
+              key={idx + proj.title}
               title={proj.title}
               link={proj.link}
               imgUrl={proj.imgUrl}
@@ -34,7 +34,7 @@ const ProjectCard = ({ title, link, imgUrl, number }) => {
           <img
             src={imgUrl}
             alt="portfolio"
-            className="transform hover:scale-125 transition duration-2000 ease-out object-cover h-full w-full"
+            className="transform hover:scale-110 transition duration-2000 ease-out object-cover h-full w-full"
           />
         </div>
         <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
