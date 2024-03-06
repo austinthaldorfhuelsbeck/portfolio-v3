@@ -8,8 +8,10 @@ const inter = Inter({ subsets: ["latin"] })
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<main className={`flex h-screen justify-center ${inter.className}`}>
-			<div className="h-full w-full overflow-y-auto md:max-w-3xl flex flex-col justify-between">
+		<main
+			className={`flex h-screen justify-center overflow-y-auto ${inter.className}`}
+		>
+			<div className="h-full w-full md:max-w-3xl flex flex-col justify-between">
 				<Navbar />
 				<Component {...pageProps} />
 				<Footer />
