@@ -68,7 +68,7 @@ export default function Home({
 			</section>
 
 			<section className="">
-				<div className="flex w-full">
+				<div className="flex w-full flex-col gap-6 sm:flex-row sm:gap-2">
 					<div className="flex-1">
 						<h1 className="text-sm text-stone-500 pb-4">Case studies</h1>
 						<ul className="flex flex-col gap-4">
