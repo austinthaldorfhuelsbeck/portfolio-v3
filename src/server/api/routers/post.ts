@@ -1,3 +1,5 @@
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const postRouter = createTRPCRouter({
@@ -14,6 +16,7 @@ export const postRouter = createTRPCRouter({
 
 		return posts;
 	}),
+
 	getAll: publicProcedure.query(async ({ ctx }) => {
 		const posts = await ctx.db.post.findMany({
 			where: {
@@ -26,4 +29,20 @@ export const postRouter = createTRPCRouter({
 
 		return posts;
 	}),
+
+	getBySlug: publicProcedure
+		.input(z.object({ slug: z.string() }))
+		.query(async ({ input, ctx }) => {
+			const post = await ctx.db.post.findUnique({
+				where: {
+					slug: input.slug,
+				},
+			});
+
+			if (!post) {
+				throw new TRPCError({ code: "NOT_FOUND" });
+			}
+
+			return post;
+		}),
 });

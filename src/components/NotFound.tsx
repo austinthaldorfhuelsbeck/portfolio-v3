@@ -18,11 +18,11 @@ export const NotFoundPage = () => (
 		<h1 className="text-3xl font-bold text-stone-300">
 			Hmmm... that&#39;s not found.
 		</h1>
-		<Link href="/">
-			<div className="flex gap-2 text-stone-300 hover:text-stone-100 hover:underline">
-				<ArrowLeftIcon className="my-auto h-5 w-5" />
+		<div className="flex gap-2 text-stone-300 hover:text-stone-100 hover:underline">
+			<ArrowLeftIcon className="my-auto h-5 w-5" />
+			<Link href="/">
 				<p>Back home</p>
-			</div>
-		</Link>
+			</Link>
+		</div>
 	</div>
 );
