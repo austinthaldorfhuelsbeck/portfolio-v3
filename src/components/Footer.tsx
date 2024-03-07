@@ -26,7 +26,7 @@ const Footer = ({
 	fact,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 	return (
-		<footer className="m-3">
+		<footer className="m-3 pb-6">
 			<hr className="border-stone-500" />
 			<div className="flex items-center justify-between mt-4">
 				<span className="text-sm text-stone-400 text-center hidden sm:inline-flex">
