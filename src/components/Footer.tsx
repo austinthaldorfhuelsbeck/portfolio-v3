@@ -1,13 +1,10 @@
-import Image from "next/image"
-import Link from "next/link"
+import { InferGetServerSidePropsType } from "next";
+import { getServerSideProps } from "next/dist/build/templates/pages";
+import Image from "next/image";
+import Link from "next/link";
 
 // Social links configuration
 const socialLinks = [
-	{
-		href: "mailto:austin@thaldorfhuelsbeck.com",
-		icon: "/social/email.svg",
-		alt: "Email",
-	},
 	{
 		href: "https://github.com/austinthaldorfhuelsbeck",
 		icon: "/social/github.svg",
@@ -23,15 +20,22 @@ const socialLinks = [
 		icon: "/social/x.svg",
 		alt: "X (formerly Twitter)",
 	},
-]
+];
 
-const Footer = () => {
+const Footer = ({
+	fact,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 	return (
 		<footer className="m-3">
 			<hr className="border-stone-500" />
 			<div className="flex items-center justify-between mt-4">
 				<span className="text-sm text-stone-400 text-center hidden sm:inline-flex">
-					"The only way to do great work is to love what you do." - Steve Jobs
+					<Link
+						href="mailto:austin@thaldorfhuelsbeck.com"
+						className="p-2 rounded hover:bg-stone-800"
+					>
+						austin@thaldorfhuelsbeck.com
+					</Link>
 				</span>
 				<div className="ml-auto flex justify-center">
 					{socialLinks.map((social) => (
@@ -52,7 +56,7 @@ const Footer = () => {
 				</div>
 			</div>
 		</footer>
-	)
-}
+	);
+};
 
-export default Footer
+export default Footer;
