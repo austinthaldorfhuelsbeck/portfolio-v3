@@ -1,22 +1,35 @@
-import Footer from "@/components/Footer"
-import Navbar from "@/components/Navbar"
-import "@/styles/globals.css"
-import type { AppProps } from "next/app"
-import { Inter } from "next/font/google"
+import { type AppType } from "next/app";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] })
+import Head from "next/head";
+import Footer from "~/components/Footer";
+import Navbar from "~/components/Navbar";
+import "~/styles/globals.css";
+import { api } from "~/utils/api";
 
-
-export default function App({ Component, pageProps }: AppProps) {
+const inter = Inter({
+	subsets: ["latin"],
+	variable: "--font-sans",
+});
+const MyApp: AppType = ({ Component, pageProps }) => {
 	return (
-		<main
-			className={`flex h-screen justify-center overflow-y-auto ${inter.className}`}
-		>
-			<div className="h-full w-full md:max-w-3xl flex flex-col justify-between">
-				<Navbar />
-				<Component {...pageProps} />
-				<Footer />
-			</div>
-		</main>
-	)
-}
+		<>
+			<Head>
+				<title>Austin Thaldorf-Huelsbeck</title>
+				<meta name="description" content="Software Engineer" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<main
+				className={`mx-auto h-screen w-full flex-col px-4 font-sans md:max-w-3xl ${inter.variable}`}
+			>
+				<div className="flex h-full w-full flex-col justify-between">
+					<Navbar />
+					<Component {...pageProps} />
+					<Footer />
+				</div>
+			</main>
+		</>
+	);
+};
+
+export default api.withTRPC(MyApp);

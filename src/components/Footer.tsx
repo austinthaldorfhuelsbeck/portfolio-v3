@@ -1,5 +1,5 @@
-import { InferGetServerSidePropsType } from "next";
-import { getServerSideProps } from "next/dist/build/templates/pages";
+import { type InferGetServerSidePropsType } from "next";
+import { type getServerSideProps } from "next/dist/build/templates/pages";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,13 +26,13 @@ const Footer = ({
 	fact,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 	return (
-		<footer className="m-3 pb-6">
+		<footer className="pb-6">
 			<hr className="border-stone-500" />
-			<div className="flex items-center justify-between mt-4">
-				<span className="text-sm text-stone-400 text-center hidden sm:inline-flex">
+			<div className="mt-4 flex items-center justify-between">
+				<span className="hidden text-center text-sm text-stone-400 sm:inline-flex">
 					<Link
 						href="mailto:austin@thaldorfhuelsbeck.com"
-						className="p-2 rounded hover:bg-stone-800"
+						className="rounded p-2 hover:bg-stone-800"
 					>
 						austin@thaldorfhuelsbeck.com
 					</Link>
@@ -43,7 +43,7 @@ const Footer = ({
 							key={social.alt}
 							href={social.href}
 							target="_blank"
-							className="p-2 rounded hover:bg-stone-800"
+							className="rounded p-2 hover:bg-stone-800"
 						>
 							<Image
 								src={social.icon}

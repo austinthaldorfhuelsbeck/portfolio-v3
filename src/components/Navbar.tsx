@@ -1,18 +1,18 @@
-import Link from "next/link"
+import Link from "next/link";
 
 // Navigation configuration
 const navigation = [
 	{ title: "about", path: "/about" },
 	{ title: "blog", path: "/blog" },
-]
+];
 
 const Navbar = () => {
 	return (
 		<header>
-			<nav className="pb-1 text-sm mx-auto max-w-screen-xl items-center px-4 flex">
+			<nav className="mx-auto flex max-w-screen-xl items-center pb-1 text-sm">
 				<div className="flex items-center justify-between py-5 md:block">
 					<Link href="/">
-						<div className="flex flex-col hover:underline decoration-stone-400">
+						<div className="flex flex-col decoration-stone-400 hover:underline">
 							<h1 className="font-bold text-stone-100">
 								Austin Thaldorf-Huelsbeck
 							</h1>
@@ -24,7 +24,7 @@ const Navbar = () => {
 				</div>
 
 				<div className="ml-auto flex">
-					<ul className="ml-auto items-center justify-center space-y-0 flex space-x-2">
+					<ul className="ml-auto flex items-center justify-center space-x-2 space-y-0">
 						{navigation.map((item, idx) => {
 							return (
 								<li
@@ -35,13 +35,13 @@ const Navbar = () => {
 										{item.title}
 									</a>
 								</li>
-							)
+							);
 						})}
 					</ul>
 				</div>
 			</nav>
 		</header>
-	)
-}
+	);
+};
 
-export default Navbar
+export default Navbar;

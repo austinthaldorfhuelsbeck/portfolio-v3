@@ -1,10 +1,5 @@
 import axios from "axios";
-
-interface GitHubRepo {
-	name: string;
-	description: string;
-	clone_url: string;
-}
+import { type GitHubRepo, type GithubApiResponse } from "~/types";
 
 const getLatestRepos = async (
 	username: string,
@@ -12,9 +7,11 @@ const getLatestRepos = async (
 	const apiUrl = `https://api.github.com/search/repositories?q=user:${username}+sort:author-date-asc`;
 
 	try {
-		const res = await axios.get(apiUrl);
-		const repos: GitHubRepo[] = res.data.items.splice(0, 4);
-		return repos;
+		const res: GithubApiResponse = await axios.get(apiUrl);
+		const repos = res.data.items;
+		const latestRepos = repos.slice(0, 4);
+
+		return latestRepos;
 	} catch (err) {
 		console.log(err);
 		return null;
