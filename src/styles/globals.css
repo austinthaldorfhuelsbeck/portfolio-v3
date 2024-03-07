@@ -9,6 +9,10 @@ body {
     list-style-type: none;
   }
 
+  a {
+    @apply decoration-stone-500 hover:decoration-stone-100
+  }
+
   overscroll-behavior: none;
   -ms-overflow-style: none;
   scrollbar-width: none;

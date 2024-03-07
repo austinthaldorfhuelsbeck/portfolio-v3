@@ -1,8 +1,10 @@
 import getLatestRepos from "@/utils/getLatestRepos"
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid"
 import { GetServerSideProps, InferGetServerSidePropsType } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
+// Data
 type Repo = {
 	name: string
 	description: string
@@ -34,84 +36,42 @@ const caseStudies: Card[] = [
 	},
 ]
 
+const blogs: Card[] = [
+	{
+		name: "How to code",
+		description: "A guide on how to code.",
+		url: "/writing/how-to-code",
+	},
+	{
+		name: "How to design",
+		description: "A guide on how to design.",
+		url: "/writing/how-to-design",
+	},
+	{
+		name: "How to build",
+		description: "A guide on how to build.",
+		url: "/writing/how-to-build",
+	},
+]
+
+// Server-side rendering
 export const getServerSideProps = (async () => {
 	const token = process.env.GITHUB_AUTH_TOKEN || ""
-	const repositories = await getLatestRepos("austinthaldorfhuelsbeck", token)
+	const repos = await getLatestRepos("austinthaldorfhuelsbeck", token)
 
 	return {
 		props: {
-			repositories,
+			repos,
 		},
 	}
-}) satisfies GetServerSideProps<{ repositories: Repo[] }>
+}) satisfies GetServerSideProps<{ repos: Repo[] }>
 
-export default function Home({
-	repositories,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-	return (
-		<div className="mx-4 flex flex-col gap-8">
-			<section className="flex flex-col gap-3">
-				<p className="text-stone-500 text-sm">About me</p>
-				<p className="text-stone-100 font-extralight">
-					Hi there! I'm <strong>Austin</strong>. I'm a self-taught software
-					engineer specialized in <strong>frontend</strong> and{" "}
-					<strong>full-stack development</strong>. I enjoy{" "}
-					<strong>building software</strong> that{" "}
-					<strong>solves real problems</strong> and{" "}
-					<strong>enhances peoples' lives.</strong>
-				</p>
-				<p className="text-stone-100 font-extralight">
-					I'm currently working on <strong>Vowsuite</strong>, a{" "}
-					<strong>CRM and hosting solution</strong> created for wedding industry
-					professionals.
-				</p>
-			</section>
-
-			<section className="">
-				<div className="flex w-full flex-col gap-6 sm:flex-row sm:gap-2">
-					<div className="flex-1">
-						<h1 className="text-sm text-stone-500 pb-4">Case studies</h1>
-						<ul className="flex flex-col gap-4">
-							{caseStudies.map((card, idx) => (
-								<Card card={card} key={idx} />
-							))}
-						</ul>
-					</div>
-
-					<div className="flex-1">
-						<h1 className="text-sm text-stone-500 pb-4">Repos</h1>
-						<div className="">
-							{repositories && (
-								<ul className="flex flex-col gap-4">
-									{repositories.map((repo: Repo, idx: string) => (
-										<RepoCard repo={repo} key={idx} />
-									))}
-								</ul>
-							)}
-						</div>
-					</div>
-
-					<div className="flex-1">
-						<h1 className="text-sm text-stone-500 pb-4">Writing</h1>
-						<Card
-							card={{
-								name: "All writing",
-								description: "My thoughts on code and design.",
-								url: "/writing",
-							}}
-						/>
-					</div>
-				</div>
-			</section>
-		</div>
-	)
-}
-
+// Components
 const Card = (props: { card: Card }) => {
 	return (
-		<li className="">
+		<li className="leading-8">
 			<Link href={props.card.url}>
-				<div className="text-stone-100 underline decoration-stone-500 hover:decoration-stone-100 leading-8">
+				<div className="text-stone-100 underline decoration-stone-500 hover:decoration-stone-100">
 					{props.card.name}
 				</div>
 			</Link>
@@ -131,5 +91,94 @@ const RepoCard = (props: { repo: Repo }) => {
 			</Link>
 			<p className="text-sm text-stone-400">{props.repo.description}</p>
 		</li>
+	)
+}
+
+const PageContent = (props: { repos: Repo[]; blogs: Card[] }) => {
+	return (
+		<section>
+			<div className="flex w-full flex-col gap-6 sm:flex-row sm:gap-2">
+				<div className="flex-1">
+					<h1 className="text-sm text-stone-500 pb-4">Case studies</h1>
+					<ul className="flex flex-col gap-4">
+						{caseStudies.map((card, idx) => (
+							<Card card={card} key={idx} />
+						))}
+					</ul>
+				</div>
+
+				<div className="flex-1">
+					<h1 className="text-sm text-stone-500 pb-4">Repos</h1>
+					<div className="">
+						{props.repos && (
+							<ul className="flex flex-col gap-4">
+								{props.repos.map((repo, idx) => (
+									<RepoCard repo={repo} key={idx} />
+								))}
+							</ul>
+						)}
+					</div>
+				</div>
+
+				<div className="flex-1">
+					<h1 className="text-sm text-stone-500 pb-4">Writing</h1>
+					<div className="">
+						{props.blogs && (
+							<ul className="flex flex-col gap-4">
+								{props.blogs.map((card, idx) => (
+									<Card card={card} key={idx} />
+								))}
+							</ul>
+						)}
+					</div>
+					<Card
+						card={{
+							name: "All writing",
+							description: "My thoughts on code and design.",
+							url: "/writing",
+						}}
+					/>
+				</div>
+			</div>
+		</section>
+	)
+}
+
+// Page
+export default function Home({
+	repos,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+	return (
+		<div className="mx-4 flex flex-col gap-8">
+			<section className="flex flex-col gap-4">
+				<p className="text-stone-500 text-sm">About me</p>
+				<div className="flex flex-row gap-4">
+					<p className="text-stone-100 font-extralight">
+						Hi there! I'm <strong>Austin</strong>. I'm a self-taught software
+						engineer specialized in <strong>frontend</strong> and{" "}
+						<strong>full-stack development</strong>. I enjoy{" "}
+						<strong>building software</strong> that{" "}
+						<strong>solves real problems</strong> and{" "}
+						<strong>enhances peoples' lives.</strong>
+					</p>
+					<Image
+						src="/images/ath-wedding-portrait.jpg"
+						width={100}
+						height={100}
+						alt="Austin Thaldorf-Huelsbeck"
+						className="rounded-full object-cover h-24 w-24 my-auto"
+					/>
+				</div>
+				<p className="text-stone-100 font-extralight">
+					I'm currently working on{" "}
+					<Link href="/case-studies/vowsuite" className="underline">
+						<strong>Vowsuite</strong>
+					</Link>
+					, a <strong>CRM and hosting solution</strong> created for wedding
+					industry professionals.
+				</p>
+			</section>
+			<PageContent repos={repos} blogs={blogs} />
+		</div>
 	)
 }
