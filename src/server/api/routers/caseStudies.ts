@@ -16,6 +16,24 @@ export const caseStudiesRouter = createTRPCRouter({
 		return caseStudies;
 	}),
 
+	getByTech: publicProcedure
+		.input(z.object({ tech: z.string() }))
+		.query(async ({ input, ctx }) => {
+			const caseStudies = await ctx.db.caseStudy.findMany({
+				where: {
+					technologies: {
+						contains: input.tech,
+					},
+					published: true,
+				},
+				orderBy: {
+					createdAt: "desc",
+				},
+			});
+
+			return caseStudies;
+		}),
+
 	getBySlug: publicProcedure
 		.input(z.object({ slug: z.string() }))
 		.query(async ({ input, ctx }) => {

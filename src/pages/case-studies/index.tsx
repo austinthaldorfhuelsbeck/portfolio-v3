@@ -1,13 +1,22 @@
 import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import AnimateWrapper from "~/components/AnimateWrapper";
 import { LoadingPage } from "~/components/Loading";
 import NotFoundPage from "~/pages/404";
 import { api } from "~/utils/api";
 
 const Blog: NextPage = () => {
-	const { data, isLoading: studiesLoading } = api.caseStudy.getAll.useQuery();
+	// check for tech query param
+	// if it exists, use it to get case studies by tech
+	const router = useRouter();
+	const tech = router.query.tech as string;
+	const { data, isLoading: studiesLoading } = tech
+		? api.caseStudy.getByTech.useQuery({
+				tech,
+			})
+		: api.caseStudy.getAll.useQuery();
 
 	if (studiesLoading) return <LoadingPage />;
 
@@ -21,7 +30,19 @@ const Blog: NextPage = () => {
 				</h2>
 			</AnimateWrapper>
 
-			<div className="flex flex-col gap-4 text-stone-300 sm:grid sm:grid-flow-col sm:grid-cols-2">
+			{tech && (
+				<AnimateWrapper>
+					<Image
+						src={`/technologies/${tech}.svg`}
+						width={24}
+						height={24}
+						alt={tech}
+						className="w-8 cursor-pointer rounded-lg p-1 hover:bg-stone-800"
+					/>
+				</AnimateWrapper>
+			)}
+
+			<div className="flex flex-col gap-4 pb-4 text-stone-300 sm:grid sm:grid-flow-col sm:grid-cols-2">
 				{data.map((study) => (
 					<Link key={study.id} href={`/case-studies/${study.slug}`}>
 						<AnimateWrapper>

@@ -140,7 +140,18 @@ const Home = ({
 						</div>
 						<div className="flex-1">
 							<h1 className="pb-4 text-sm font-semibold text-stone-500">
-								Projects
+								Writing
+							</h1>
+							<PostsFeed />
+							<FeedCard
+								name="All Writing"
+								url="/blog"
+								description="Check out more posts"
+							/>
+						</div>
+						<div className="flex-1">
+							<h1 className="pb-4 text-sm font-semibold text-stone-500">
+								Repos
 							</h1>
 							{repos && (
 								<ul className="flex flex-col gap-2">
@@ -150,17 +161,6 @@ const Home = ({
 									})}
 								</ul>
 							)}
-						</div>
-						<div className="flex-1">
-							<h1 className="pb-4 text-sm font-semibold text-stone-500">
-								Writing
-							</h1>
-							<PostsFeed />
-							<FeedCard
-								name="All Writing"
-								url="/blog"
-								description="Check out more posts"
-							/>
 						</div>
 					</section>
 				</AnimateWrapper>

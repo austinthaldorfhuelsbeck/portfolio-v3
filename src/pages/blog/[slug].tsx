@@ -2,6 +2,7 @@ import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { type Post } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
 import type { GetStaticProps, NextPage } from "next";
+import Image from "next/image";
 
 import Head from "next/head";
 import Link from "next/link";
@@ -37,6 +38,19 @@ const PostView = (props: Post) => {
 					</h1>
 				</div>
 			</AnimateWrapper>
+
+			{props.image && (
+				<AnimateWrapper>
+					<Image
+						src={props.image}
+						alt={`Cover image for ${props.name}`}
+						width={1200}
+						height={600}
+						layout="responsive"
+						className="my-5 rounded-lg"
+					/>
+				</AnimateWrapper>
+			)}
 
 			<AnimateWrapper>
 				<h3 className="mb-3 text-xl">{props.description}</h3>

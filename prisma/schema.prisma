@@ -15,6 +15,7 @@ model Post {
     name        String
     slug        String   @unique
     description String   @default("")
+    image       String   @default("")
     content     String?  @db.VarChar(10000)
     published   Boolean  @default(false)
     createdAt   DateTime @default(now())
