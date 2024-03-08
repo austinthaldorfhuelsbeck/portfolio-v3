@@ -1,3 +1,4 @@
+import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,27 +25,43 @@ const Blog: NextPage = () => {
 
 	return (
 		<>
-			<AnimateWrapper>
-				<h2 className="mb-10 text-2xl font-bold tracking-tight text-stone-300 md:text-3xl">
-					Case Studies
-				</h2>
-			</AnimateWrapper>
-
 			{tech && (
 				<AnimateWrapper>
-					<Image
-						src={`/technologies/${tech}.svg`}
-						width={24}
-						height={24}
-						alt={tech}
-						className="w-8 cursor-pointer rounded-lg p-1 hover:bg-stone-800"
-					/>
+					<div className="flex gap-2 text-sm font-extralight text-stone-300 ">
+						<ArrowLeftIcon className="my-auto h-5 w-5" />
+						<Link href="/projects">
+							<p className="hover:text-stone-100 hover:underline">
+								<em>All projects</em>
+							</p>
+						</Link>
+					</div>
+
+					<div className="flex gap-2">
+						<h2 className="text-2xl font-bold tracking-tight text-stone-300 md:text-3xl">
+							{`Projects using ${tech}`}
+						</h2>
+						<Image
+							src={`/technologies/${tech}.svg`}
+							width={24}
+							height={24}
+							alt={tech}
+							className="w-8 p-1"
+						/>
+					</div>
+				</AnimateWrapper>
+			)}
+
+			{!tech && (
+				<AnimateWrapper>
+					<h2 className="mb-10 text-2xl font-bold tracking-tight text-stone-300 md:text-3xl">
+						Projects
+					</h2>
 				</AnimateWrapper>
 			)}
 
 			<div className="flex flex-col gap-4 pb-4 text-stone-300 sm:grid sm:grid-flow-col sm:grid-cols-2">
 				{data.map((study) => (
-					<Link key={study.id} href={`/case-studies/${study.slug}`}>
+					<Link key={study.id} href={`/projects/${study.slug}`}>
 						<AnimateWrapper>
 							<div className="hover:scale-102 mx-auto rounded-lg bg-indigo-500/20 brightness-90 grayscale duration-300 ease-in-out hover:brightness-100 hover:grayscale-0 hover:transition-all">
 								<Image

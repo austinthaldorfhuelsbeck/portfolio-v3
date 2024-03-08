@@ -61,7 +61,7 @@ const CaseStudiesFeed = () => {
 			{data.map((caseStudy, idx) => {
 				const config = {
 					...caseStudy,
-					url: `/case-studies/${caseStudy.slug}`,
+					url: `/projects/${caseStudy.slug}`,
 				};
 				return <FeedCard key={idx} {...config} />;
 			})}
@@ -112,7 +112,7 @@ const Home = ({
 
 								<p>
 									I&#39;m currently working on{" "}
-									<Link href="/case-studies/vowsuite" className="underline">
+									<Link href="/projects/vowsuite" className="underline">
 										<strong>Vowsuite</strong>
 									</Link>
 									, a <strong>CRM and hosting solution</strong> created for

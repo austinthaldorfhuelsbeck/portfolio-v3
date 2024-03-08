@@ -1,4 +1,4 @@
-import { ArrowLeftIcon } from "@heroicons/react/20/solid";
+import { ArrowLeftIcon, ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import { type CaseStudy } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
 import type { GetStaticProps, NextPage } from "next";
@@ -18,7 +18,7 @@ const CaseStudyView = (props: CaseStudy) => {
 			<AnimateWrapper>
 				<div className="flex gap-2 text-sm font-extralight text-stone-300 ">
 					<ArrowLeftIcon className="my-auto h-5 w-5" />
-					<Link href="/case-studies">
+					<Link href="/projects">
 						<p className="hover:text-stone-100 hover:underline">
 							<em>All projects</em>
 						</p>
@@ -35,15 +35,38 @@ const CaseStudyView = (props: CaseStudy) => {
 				<h3 className="mb-3 text-xl">{props.description}</h3>
 				<div className="flex gap-2">
 					{props.technologies.split(",").map((tech, idx) => (
-						<Image
-							key={idx}
-							src={`/technologies/${tech}.svg`}
-							width={24}
-							height={24}
-							alt={tech}
-							className="w-8 cursor-pointer rounded-lg p-1 hover:bg-stone-800"
-						/>
+						<Link key={idx} href={`/projects/?tech=${tech}`}>
+							<Image
+								src={`/technologies/${tech}.svg`}
+								width={24}
+								height={24}
+								alt={tech}
+								className="w-8 cursor-pointer rounded-lg p-1 hover:bg-stone-800"
+							/>
+						</Link>
 					))}
+					<div className="ml-auto flex">
+						<Link
+							href={props.repo}
+							target="_blank"
+							className="text-stone-100 hover:text-stone-200 hover:underline"
+						>
+							<div className="flex gap-1 rounded px-2 py-1 font-medium text-stone-400 hover:bg-stone-800 hover:text-stone-200">
+								<p>Repo</p>
+								<ArrowUpRightIcon className="my-auto h-4 w-4" />
+							</div>
+						</Link>
+						<Link
+							href={props.demo}
+							target="_blank"
+							className="text-stone-100 hover:text-stone-200 hover:underline"
+						>
+							<div className="flex gap-1 rounded px-2 py-1 font-medium text-stone-400 hover:bg-stone-800 hover:text-stone-200">
+								<p>Demo</p>
+								<ArrowUpRightIcon className="my-auto h-4 w-4" />
+							</div>
+						</Link>
+					</div>
 				</div>
 			</AnimateWrapper>
 

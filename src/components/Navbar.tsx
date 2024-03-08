@@ -3,7 +3,7 @@ import Link from "next/link";
 // Navigation configuration
 const navigation = [
 	{ title: "about", path: "/about" },
-	{ title: "projects", path: "/case-studies" },
+	{ title: "projects", path: "/projects" },
 	{ title: "blog", path: "/blog" },
 ];
 
