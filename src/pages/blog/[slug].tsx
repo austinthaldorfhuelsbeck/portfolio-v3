@@ -5,6 +5,7 @@ import type { GetStaticProps, NextPage } from "next";
 
 import Head from "next/head";
 import Link from "next/link";
+import AnimateWrapper from "~/components/AnimateWrapper";
 import { LoadingPage } from "~/components/Loading";
 import NotFoundPage from "~/pages/404";
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
@@ -13,24 +14,38 @@ import { api } from "~/utils/api";
 const PostView = (props: Post) => {
 	return (
 		<div className="text-stone-400">
-			<div className="flex gap-2 text-sm font-extralight text-stone-300 ">
-				<ArrowLeftIcon className="my-auto h-5 w-5" />
-				<Link href="/blog">
-					<p className="hover:text-stone-100 hover:underline">
-						<em>All writing</em>
+			<AnimateWrapper>
+				<div className="flex gap-2 text-sm font-extralight text-stone-300 ">
+					<ArrowLeftIcon className="my-auto h-5 w-5" />
+					<Link href="/blog">
+						<p className="hover:text-stone-100 hover:underline">
+							<em>All writing</em>
+						</p>
+					</Link>
+				</div>
+			</AnimateWrapper>
+
+			<AnimateWrapper>
+				<div className="my-6">
+					<p className="text-xs font-extralight">
+						<time dateTime={props.createdAt.toDateString()} className="">
+							{props.createdAt.toLocaleDateString()}
+						</time>
 					</p>
-				</Link>
-			</div>
-			<div className="my-6">
-				<p className="text-xs font-extralight">
-					<time dateTime={props.createdAt.toDateString()} className="">
-						{props.createdAt.toLocaleDateString()}
-					</time>
-				</p>
-				<h1 className="text-3xl font-extrabold text-stone-100">{props.name}</h1>
-			</div>
-			<h3 className="mb-3 text-xl">{props.description}</h3>
-			<div dangerouslySetInnerHTML={{ __html: props.content ?? "" }} />
+					<h1 className="text-3xl font-extrabold text-stone-100">
+						{props.name}
+					</h1>
+				</div>
+			</AnimateWrapper>
+
+			<AnimateWrapper>
+				<h3 className="mb-3 text-xl">{props.description}</h3>
+			</AnimateWrapper>
+
+			<AnimateWrapper>
+				{/*TODO  Temporary load of content until I figure out how to read markdown or something */}
+				<div dangerouslySetInnerHTML={{ __html: props.content ?? "" }} />
+			</AnimateWrapper>
 		</div>
 	);
 };

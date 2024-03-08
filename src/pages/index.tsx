@@ -3,6 +3,7 @@ import { type InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { type FC } from "react";
+import AnimateWrapper from "~/components/AnimateWrapper";
 import { LoadingSpinner } from "~/components/Loading";
 import { type GitHubRepo } from "~/types";
 import { api } from "~/utils/api";
@@ -95,68 +96,74 @@ const Home = ({
 	return (
 		<div className="flex flex-col gap-8">
 			<div className="flex flex-col gap-8">
-				<section className="flex flex-col gap-4 font-extralight text-stone-100">
-					<p className="text-sm font-semibold text-stone-500">About me</p>
-					<div className="flex flex-row gap-4">
-						<div className="flex flex-col gap-4">
-							<p>
-								<strong>👋 Hi, I&#39;m Austin</strong>. I&#39;m a self-taught
-								software engineer specialized in <strong>frontend</strong> and{" "}
-								<strong>full-stack development</strong>. I enjoy{" "}
-								<strong>building software</strong> that{" "}
-								<strong>solves real problems</strong> and{" "}
-								<strong>enhances peoples&#39; lives.</strong>
-							</p>
+				<AnimateWrapper>
+					<section className="flex flex-col gap-4 font-extralight text-stone-100">
+						<p className="text-sm font-semibold text-stone-500">About me</p>
+						<div className="flex flex-row gap-4">
+							<div className="flex flex-col gap-4">
+								<p>
+									<strong>👋 Hi, I&#39;m Austin</strong>. I&#39;m a self-taught
+									software engineer specialized in <strong>frontend</strong> and{" "}
+									<strong>full-stack development</strong>. I enjoy{" "}
+									<strong>building software</strong> that{" "}
+									<strong>solves real problems</strong> and{" "}
+									<strong>enhances peoples&#39; lives.</strong>
+								</p>
 
-							<p>
-								I&#39;m currently working on{" "}
-								<Link href="/case-studies/vowsuite" className="underline">
-									<strong>Vowsuite</strong>
-								</Link>
-								, a <strong>CRM and hosting solution</strong> created for
-								wedding industry professionals.
-							</p>
+								<p>
+									I&#39;m currently working on{" "}
+									<Link href="/case-studies/vowsuite" className="underline">
+										<strong>Vowsuite</strong>
+									</Link>
+									, a <strong>CRM and hosting solution</strong> created for
+									wedding industry professionals.
+								</p>
+							</div>
+							<Image
+								src="/images/ath-wedding-portrait.jpg"
+								width={100}
+								height={100}
+								alt="Austin Thaldorf-Huelsbeck"
+								className="my-auto hidden h-24 w-24 rounded-full object-cover sm:block"
+							/>
 						</div>
-						<Image
-							src="/images/ath-wedding-portrait.jpg"
-							width={100}
-							height={100}
-							alt="Austin Thaldorf-Huelsbeck"
-							className="my-auto hidden h-24 w-24 rounded-full object-cover sm:block"
-						/>
-					</div>
-					{fact && <p>{`By the way, here's a random fact: ${fact} 🤓`}</p>}
-				</section>
-			</div>
-			<div className="flex w-full flex-col gap-6 pb-8 sm:flex-row sm:gap-2 sm:pb-4">
-				<div className="flex-1">
-					<h1 className="pb-4 text-sm font-semibold text-stone-500">
-						Case Studies
-					</h1>
-					<CaseStudiesFeed />
-				</div>
-				<div className="flex-1">
-					<h1 className="pb-4 text-sm font-semibold text-stone-500">
-						Projects
-					</h1>
-					{repos && (
-						<ul className="flex flex-col gap-2">
-							{repos.map((repo, idx) => {
-								const config = { ...repo, url: repo.clone_url };
-								return <FeedCard key={idx} {...config} />;
-							})}
-						</ul>
-					)}
-				</div>
-				<div className="flex-1">
-					<h1 className="pb-4 text-sm font-semibold text-stone-500">Writing</h1>
-					<PostsFeed />
-					<FeedCard
-						name="All Writing"
-						url="/blog"
-						description="Check out more posts"
-					/>
-				</div>
+						{fact && <p>{`By the way, here's a random fact: ${fact} 🤓`}</p>}
+					</section>
+				</AnimateWrapper>
+				<AnimateWrapper>
+					<section className="flex w-full flex-col gap-6 pb-8 sm:flex-row sm:gap-2 sm:pb-4">
+						<div className="flex-1">
+							<h1 className="pb-4 text-sm font-semibold text-stone-500">
+								Case Studies
+							</h1>
+							<CaseStudiesFeed />
+						</div>
+						<div className="flex-1">
+							<h1 className="pb-4 text-sm font-semibold text-stone-500">
+								Projects
+							</h1>
+							{repos && (
+								<ul className="flex flex-col gap-2">
+									{repos.map((repo, idx) => {
+										const config = { ...repo, url: repo.clone_url };
+										return <FeedCard key={idx} {...config} />;
+									})}
+								</ul>
+							)}
+						</div>
+						<div className="flex-1">
+							<h1 className="pb-4 text-sm font-semibold text-stone-500">
+								Writing
+							</h1>
+							<PostsFeed />
+							<FeedCard
+								name="All Writing"
+								url="/blog"
+								description="Check out more posts"
+							/>
+						</div>
+					</section>
+				</AnimateWrapper>
 			</div>
 		</div>
 	);
