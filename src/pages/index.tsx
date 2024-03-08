@@ -57,7 +57,7 @@ const CaseStudiesFeed = () => {
 	if (!data) return <></>;
 
 	return (
-		<ul className="mb-2 flex flex-col gap-2">
+		<ul className="m-0 mb-2 flex list-none flex-col gap-2">
 			{data.map((caseStudy, idx) => {
 				const config = {
 					...caseStudy,
@@ -77,7 +77,7 @@ const PostsFeed = () => {
 	if (!data) return <></>;
 
 	return (
-		<ul className="mb-2 flex flex-col gap-2">
+		<ul className="m-0 mb-2 flex list-none flex-col gap-2">
 			{data.map((post, idx) => {
 				const config = {
 					...post,
@@ -132,7 +132,7 @@ const Home = ({
 				</AnimateWrapper>
 				<AnimateWrapper>
 					<section className="flex w-full flex-col gap-6 pb-8 sm:flex-row sm:gap-2 sm:pb-4">
-						<div className="flex-1">
+						<div className="m-0 flex-1 list-none">
 							<h1 className="pb-4 text-sm font-semibold text-stone-500">
 								Case Studies
 							</h1>
@@ -143,7 +143,7 @@ const Home = ({
 								description="Read all case studies"
 							/>
 						</div>
-						<div className="flex-1">
+						<div className="m-0 flex-1 list-none">
 							<h1 className="pb-4 text-sm font-semibold text-stone-500">
 								Writing
 							</h1>
@@ -159,7 +159,7 @@ const Home = ({
 								Repos
 							</h1>
 							{repos && (
-								<ul className="flex flex-col gap-2">
+								<ul className="m-0 flex list-none flex-col gap-2">
 									{repos.map((repo, idx) => {
 										const config = { ...repo, url: repo.clone_url };
 										return <FeedCard key={idx} {...config} />;

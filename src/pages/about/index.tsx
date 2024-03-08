@@ -20,7 +20,7 @@ const About: NextPage = () => {
 				<ArrowDownTrayIcon className="mr-2 h-4 w-4" />
 				Download CV
 			</Link>
-			<ol className="relative mx-3 mt-8 border-s border-stone-700">
+			<ol className="relative m-0 mx-3 mt-8 list-none border-s border-stone-700">
 				{data.map((experience, idx) => (
 					<li key={idx} className="mb-14 ms-6">
 						<AnimateWrapper>

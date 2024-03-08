@@ -27,7 +27,7 @@ const addTailwindClass = () => {
 					classesToAdd = "my-5";
 					break;
 				case "li":
-					classesToAdd = "text-sm font-bold py-2";
+					classesToAdd = "text-sm";
 					break;
 				case "img":
 					classesToAdd = "my-5 rounded-lg";

@@ -14,10 +14,19 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-li {
-  list-style-type: none;
-}
-
 a {
   @apply decoration-stone-500 hover:decoration-stone-100 hover:transition-all duration-300 ease-in-out;
+}
+
+blockquote {
+  margin-left: 1.5em;
+  @apply border-l-4 border-stone-500 pl-4;
+}
+
+pre {
+  @apply bg-stone-800 p-4 rounded-lg overflow-x-auto;
+}
+
+ul, ol {
+  @apply list-disc list-inside ml-4;
 }

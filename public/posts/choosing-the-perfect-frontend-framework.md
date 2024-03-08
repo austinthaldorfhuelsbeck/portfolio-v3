@@ -46,11 +46,11 @@ When your app requires a custom API, a full-stack framework like Next.js offers 
 Actually there are a lot of benefits to Next.js but at the end of the day, it is just my personal preference as a developer who began with JavaScript and Node.js and who likes React.
 Honestly, if you already know another language well, your time may be better spent learning that language's most popular and supported framework instead.
 
-- Ruby: Ruby on Rails
-- Python: Django
-- PHP: Laravel
-- C#: ASP.NET Core
-- Java: Spring Boot / Play Framework
+- **Ruby:** Ruby on Rails
+- **Python**: Django
+- **PHP:** Laravel
+- **C#:** ASP.NET Core
+- **Java:** Spring Boot / Play Framework
 
 But if you don't know any of those languages and you're interested in frontend development... you should probably just learn a JavaScript framework. JavaScript is really important to know as a frontend developer and it will never go out of style.
 
@@ -60,16 +60,16 @@ In cases where your app interfaces directly with third-party APIs, you can use a
 The decision between using React or other frameworks like Angular or Vue.js which can depend on personal preference, the complexity of the state management, and the specific requirements of the API integration.
 
 #### React
-- Flexibility and Ecosystem: React's library-centric approach make it best for projects where the API integration involves a unique or complex data flow that doesn't fit neatly into a conventional model. You will end up with a ton of dependencies but it's important to know you can use React for handling API requests, caching, and state management according to the project's specific needs.
-- Component Reusability: React's component-based architecture allows for efficient reuse of UI components. This can be particularly beneficial for APIs that deliver complex, nested data structures that need to be displayed in multiple, distinct views.
+- **Flexibility and Ecosystem:** React's library-centric approach make it best for projects where the API integration involves a unique or complex data flow that doesn't fit neatly into a conventional model. You will end up with a ton of dependencies but it's important to know you can use React for handling API requests, caching, and state management according to the project's specific needs.
+- **Component Reusability:** React's component-based architecture allows for efficient reuse of UI components. This can be particularly beneficial for APIs that deliver complex, nested data structures that need to be displayed in multiple, distinct views.
 
 #### Angular
-- Comprehensive Framework: Angular is a full-fledged framework with a bunch of batteries in the box. It's really great if you have a lot of complex forms and need to perform a ton of CRUD operations.
-- Reactive Programming: RxJS for handling asynchronous operations is great for interacting with APIs in a highly dynamic manner. Check it out if the API integration involves real-time data streaming or complex chains of asynchronous operations.
+- **Comprehensive Framework:** Angular is a full-fledged framework with a bunch of batteries in the box. It's really great if you have a lot of complex forms and need to perform a ton of CRUD operations.
+- **Reactive Programming:** RxJS for handling asynchronous operations is great for interacting with APIs in a highly dynamic manner. Check it out if the API integration involves real-time data streaming or complex chains of asynchronous operations.
 
 #### Vue.js
-- Simplicity and Progressive Adoption: For applications that interface with APIs in a straightforward manner—such as simple fetch requests and data display—Vue's approachable syntax and progressive nature make it a strong candidate. It allows developers to start small and scale up as needed.
-- Custom Directives: If the API requires a lot of custom client-side logic to transform data for display or to integrate reactive data properties seamlessly, Vue provides a flexible toolset to achieve these goals with minimal boilerplate.
+- **Simplicity and Progressive Adoption:** For applications that interface with APIs in a straightforward manner—such as simple fetch requests and data display—Vue's approachable syntax and progressive nature make it a strong candidate. It allows developers to start small and scale up as needed.
+- **Custom Directives:** If the API requires a lot of custom client-side logic to transform data for display or to integrate reactive data properties seamlessly, Vue provides a flexible toolset to achieve these goals with minimal boilerplate.
 
 ## Static (Typing) Shock
 
