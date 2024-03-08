@@ -6,7 +6,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { LoadingPage } from "~/components/Loading";
-import { NotFoundPage } from "~/components/NotFound";
+import NotFoundPage from "~/pages/404";
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
 import { api } from "~/utils/api";
 

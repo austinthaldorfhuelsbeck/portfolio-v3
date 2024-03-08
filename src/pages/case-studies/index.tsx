@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { LoadingPage } from "~/components/Loading";
-import { NotFoundPage } from "~/components/NotFound";
+import { NotFoundPage } from "~/pages/404";
 import { api } from "~/utils/api";
 
 const Blog: NextPage = () => {

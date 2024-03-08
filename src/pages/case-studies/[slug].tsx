@@ -7,7 +7,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { LoadingPage } from "~/components/Loading";
-import { NotFoundPage } from "~/components/NotFound";
+import NotFoundPage from "~/pages/404";
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
 import { api } from "~/utils/api";
 
@@ -39,6 +39,7 @@ const CaseStudyView = (props: CaseStudy) => {
 					/>
 				))}
 			</div>
+
 			<Image
 				src={props.image}
 				alt={`Cover image for ${props.name}`}
@@ -47,6 +48,8 @@ const CaseStudyView = (props: CaseStudy) => {
 				layout="responsive"
 				className="my-5 rounded-lg"
 			/>
+
+			{/*TODO  Temporary load of content until I figure out how to read markdown or something */}
 			<div dangerouslySetInnerHTML={{ __html: props.content ?? "" }} />
 		</div>
 	);
