@@ -6,7 +6,7 @@ import { NotFoundPage } from "~/components/NotFound";
 import { api } from "~/utils/api";
 
 const Blog: NextPage = () => {
-	const { data, isLoading: studiesLoading } = api.caseStudies.getAll.useQuery();
+	const { data, isLoading: studiesLoading } = api.caseStudy.getAll.useQuery();
 
 	if (studiesLoading) return <LoadingPage />;
 

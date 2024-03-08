@@ -24,15 +24,18 @@ model Post {
 }
 
 model CaseStudy {
-    id          String   @id @default(cuid())
-    name        String
-    slug        String   @unique
-    description String   @default("")
-    image       String   @default("")
-    content     String?  @db.VarChar(10000)
-    published   Boolean  @default(false)
-    createdAt   DateTime @default(now())
-    updatedAt   DateTime @updatedAt
+    id           String   @id @default(cuid())
+    name         String
+    slug         String   @unique
+    description  String   @default("")
+    technologies String   @default("")
+    repo         String   @default("")
+    demo         String   @default("")
+    image        String   @default("")
+    content      String?  @db.VarChar(10000)
+    published    Boolean  @default(false)
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @updatedAt
 
     @@index([slug])
 }

@@ -1,3 +1,5 @@
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const caseStudiesRouter = createTRPCRouter({
@@ -13,4 +15,20 @@ export const caseStudiesRouter = createTRPCRouter({
 
 		return caseStudies;
 	}),
+
+	getBySlug: publicProcedure
+		.input(z.object({ slug: z.string() }))
+		.query(async ({ input, ctx }) => {
+			const caseStudy = await ctx.db.caseStudy.findUnique({
+				where: {
+					slug: input.slug,
+				},
+			});
+
+			if (!caseStudy) {
+				throw new TRPCError({ code: "NOT_FOUND" });
+			}
+
+			return caseStudy;
+		}),
 });

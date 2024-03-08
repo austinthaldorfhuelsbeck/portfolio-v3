@@ -11,7 +11,7 @@ import { experienceRouter } from "./routers/experience";
 export const appRouter = createTRPCRouter({
 	post: postRouter,
 	experience: experienceRouter,
-	caseStudies: caseStudiesRouter,
+	caseStudy: caseStudiesRouter,
 });
 
 // export type definition of API

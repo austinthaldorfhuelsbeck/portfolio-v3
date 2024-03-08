@@ -19,5 +19,5 @@ li {
 }
 
 a {
-  @apply decoration-stone-500 hover:decoration-stone-100
+  @apply decoration-stone-500 hover:decoration-stone-100 hover:transition-all duration-300 ease-in-out;
 }

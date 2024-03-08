@@ -49,7 +49,7 @@ const FeedCard: FC<CardItem> = ({ name, url, description }) => (
 
 const CaseStudiesFeed = () => {
 	const { data, isLoading: caseStudiesLoading } =
-		api.caseStudies.getAll.useQuery();
+		api.caseStudy.getAll.useQuery();
 
 	if (caseStudiesLoading) return <LoadingSpinner size={32} />;
 
@@ -128,7 +128,7 @@ const Home = ({
 					{fact && <p>{`By the way, here's a random fact: ${fact} 🤓`}</p>}
 				</section>
 			</div>
-			<div className="flex w-full flex-col gap-6 pb-8 sm:flex-row sm:gap-2 sm:pb-0">
+			<div className="flex w-full flex-col gap-6 pb-8 sm:flex-row sm:gap-2 sm:pb-4">
 				<div className="flex-1">
 					<h1 className="pb-4 text-sm font-semibold text-stone-500">
 						Case Studies
