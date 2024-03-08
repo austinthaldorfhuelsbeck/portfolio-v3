@@ -100,9 +100,8 @@ const Home = ({
 					<div className="flex flex-row gap-4">
 						<div className="flex flex-col gap-4">
 							<p>
-								<strong>👋 Hi, I&#39;m Austin</strong>. I&#39;m a
-								self-taught software engineer specialized in{" "}
-								<strong>frontend</strong> and{" "}
+								<strong>👋 Hi, I&#39;m Austin</strong>. I&#39;m a self-taught
+								software engineer specialized in <strong>frontend</strong> and{" "}
 								<strong>full-stack development</strong>. I enjoy{" "}
 								<strong>building software</strong> that{" "}
 								<strong>solves real problems</strong> and{" "}

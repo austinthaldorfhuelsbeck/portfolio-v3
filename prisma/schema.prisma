@@ -28,7 +28,8 @@ model CaseStudy {
     name        String
     slug        String   @unique
     description String   @default("")
-    content     String?
+    image       String   @default("")
+    content     String?  @db.VarChar(10000)
     published   Boolean  @default(false)
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
