@@ -1,5 +1,3 @@
-import { type InferGetServerSidePropsType } from "next";
-import { type getServerSideProps } from "next/dist/build/templates/pages";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,15 +14,13 @@ const socialLinks = [
 		alt: "LinkedIn",
 	},
 	{
-		href: "https://twitter.com/AHuelsbeck39985",
+		href: "https://twitter.com/austin_athdev",
 		icon: "/social/x.svg",
 		alt: "X (formerly Twitter)",
 	},
 ];
 
-const Footer = ({
-	fact,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Footer = () => {
 	return (
 		<footer className="pb-6">
 			<hr className="border-stone-500" />

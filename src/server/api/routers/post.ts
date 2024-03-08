@@ -1,11 +1,12 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import markdownToHtml from "~/utils/markdownToHtml";
 
 export const postRouter = createTRPCRouter({
-	getThree: publicProcedure.query(async ({ ctx }) => {
+	getLatest: publicProcedure.query(async ({ ctx }) => {
 		const posts = await ctx.db.post.findMany({
-			take: 3,
+			take: 2,
 			where: {
 				published: true,
 			},
@@ -43,6 +44,18 @@ export const postRouter = createTRPCRouter({
 				throw new TRPCError({ code: "NOT_FOUND" });
 			}
 
-			return post;
+			try {
+				const { frontmatter, contentHtml } = await markdownToHtml(
+					input.slug,
+					"posts",
+				);
+				return {
+					...post,
+					content: contentHtml,
+					frontmatter,
+				};
+			} catch (error) {
+				return post;
+			}
 		}),
 });

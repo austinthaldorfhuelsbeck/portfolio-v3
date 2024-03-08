@@ -22,3 +22,18 @@ export type NinjasApiResponse = {
 	data: Fact[];
 	error?: Error;
 };
+
+export type Frontmatter = Record<string, string>;
+
+export interface PostOrCaseStudyContent {
+	frontmatter: Frontmatter;
+	contentHtml: string;
+}
+
+export interface PostOrCaseStudy extends PostOrCaseStudyContent {
+	// Add other properties from your post or case study here
+	id: string;
+	name: string;
+	slug: string;
+	// Include other fields as needed
+}

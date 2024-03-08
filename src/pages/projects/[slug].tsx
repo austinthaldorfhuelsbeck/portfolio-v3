@@ -12,6 +12,56 @@ import NotFoundPage from "~/pages/404";
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
 import { api } from "~/utils/api";
 
+const CaseStudyHeader = (props: CaseStudy) => (
+	<AnimateWrapper>
+		<div className="my-4">
+			<h1 className="text-3xl font-extrabold text-stone-100">{props.name}</h1>
+			<p className="text-sm">
+				<em>{props.createdAt.toLocaleDateString()}</em>
+			</p>
+		</div>
+		<h3 className="mb-3 text-xl">{props.description}</h3>
+		<div className="flex gap-2">
+			{props.technologies
+				.split(",")
+				.sort()
+				.map((tech, idx) => (
+					<Link key={idx} href={`/projects/?tech=${tech}`}>
+						<Image
+							src={`/technologies/${tech}.svg`}
+							width={24}
+							height={24}
+							alt={tech}
+							className="w-8 cursor-pointer rounded-lg p-1 hover:bg-stone-800"
+						/>
+					</Link>
+				))}
+			<div className="ml-auto flex">
+				<Link
+					href={props.repo}
+					target="_blank"
+					className="text-stone-100 hover:text-stone-200 hover:underline"
+				>
+					<div className="flex gap-1 rounded px-2 py-1 font-medium text-stone-400 hover:bg-stone-800 hover:text-stone-200">
+						<p>Repo</p>
+						<ArrowUpRightIcon className="my-auto h-4 w-4" />
+					</div>
+				</Link>
+				<Link
+					href={props.demo}
+					target="_blank"
+					className="text-stone-100 hover:text-stone-200 hover:underline"
+				>
+					<div className="flex gap-1 rounded px-2 py-1 font-medium text-stone-400 hover:bg-stone-800 hover:text-stone-200">
+						<p>Demo</p>
+						<ArrowUpRightIcon className="my-auto h-4 w-4" />
+					</div>
+				</Link>
+			</div>
+		</div>
+	</AnimateWrapper>
+);
+
 const CaseStudyView = (props: CaseStudy) => {
 	return (
 		<div className="text-stone-400">
@@ -26,49 +76,7 @@ const CaseStudyView = (props: CaseStudy) => {
 				</div>
 			</AnimateWrapper>
 
-			<AnimateWrapper>
-				<div className="my-6">
-					<h1 className="text-3xl font-extrabold text-stone-100">
-						{props.name}
-					</h1>
-				</div>
-				<h3 className="mb-3 text-xl">{props.description}</h3>
-				<div className="flex gap-2">
-					{props.technologies.split(",").map((tech, idx) => (
-						<Link key={idx} href={`/projects/?tech=${tech}`}>
-							<Image
-								src={`/technologies/${tech}.svg`}
-								width={24}
-								height={24}
-								alt={tech}
-								className="w-8 cursor-pointer rounded-lg p-1 hover:bg-stone-800"
-							/>
-						</Link>
-					))}
-					<div className="ml-auto flex">
-						<Link
-							href={props.repo}
-							target="_blank"
-							className="text-stone-100 hover:text-stone-200 hover:underline"
-						>
-							<div className="flex gap-1 rounded px-2 py-1 font-medium text-stone-400 hover:bg-stone-800 hover:text-stone-200">
-								<p>Repo</p>
-								<ArrowUpRightIcon className="my-auto h-4 w-4" />
-							</div>
-						</Link>
-						<Link
-							href={props.demo}
-							target="_blank"
-							className="text-stone-100 hover:text-stone-200 hover:underline"
-						>
-							<div className="flex gap-1 rounded px-2 py-1 font-medium text-stone-400 hover:bg-stone-800 hover:text-stone-200">
-								<p>Demo</p>
-								<ArrowUpRightIcon className="my-auto h-4 w-4" />
-							</div>
-						</Link>
-					</div>
-				</div>
-			</AnimateWrapper>
+			<CaseStudyHeader {...props} />
 
 			<AnimateWrapper>
 				<Image
@@ -82,7 +90,6 @@ const CaseStudyView = (props: CaseStudy) => {
 			</AnimateWrapper>
 
 			<AnimateWrapper>
-				{/*TODO  Temporary load of content until I figure out how to read markdown or something */}
 				<div dangerouslySetInnerHTML={{ __html: props.content ?? "" }} />
 			</AnimateWrapper>
 		</div>

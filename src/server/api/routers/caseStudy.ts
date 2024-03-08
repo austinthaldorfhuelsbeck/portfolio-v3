@@ -1,10 +1,25 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import markdownToHtml from "~/utils/markdownToHtml";
 
-export const caseStudiesRouter = createTRPCRouter({
+export const caseStudyRouter = createTRPCRouter({
 	getAll: publicProcedure.query(async ({ ctx }) => {
 		const caseStudies = await ctx.db.caseStudy.findMany({
+			where: {
+				published: true,
+			},
+			orderBy: {
+				createdAt: "desc",
+			},
+		});
+
+		return caseStudies;
+	}),
+
+	getLatest: publicProcedure.query(async ({ ctx }) => {
+		const caseStudies = await ctx.db.caseStudy.findMany({
+			take: 3,
 			where: {
 				published: true,
 			},
@@ -47,6 +62,18 @@ export const caseStudiesRouter = createTRPCRouter({
 				throw new TRPCError({ code: "NOT_FOUND" });
 			}
 
-			return caseStudy;
+			try {
+				const { frontmatter, contentHtml } = await markdownToHtml(
+					input.slug,
+					"projects",
+				);
+				return {
+					...caseStudy,
+					content: contentHtml,
+					frontmatter,
+				};
+			} catch (error) {
+				return caseStudy;
+			}
 		}),
 });

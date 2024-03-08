@@ -36,7 +36,7 @@ const FeedCard: FC<CardItem> = ({ name, url, description }) => (
 	<li className="leading-8">
 		<Link
 			href={url}
-			className="flex text-stone-100 underline decoration-stone-500 hover:decoration-stone-100"
+			className="flex leading-snug text-stone-100 underline decoration-stone-500 hover:decoration-stone-100"
 			target={url.startsWith("http") ? "_blank" : undefined}
 		>
 			{name}
@@ -50,14 +50,14 @@ const FeedCard: FC<CardItem> = ({ name, url, description }) => (
 
 const CaseStudiesFeed = () => {
 	const { data, isLoading: caseStudiesLoading } =
-		api.caseStudy.getAll.useQuery();
+		api.caseStudy.getLatest.useQuery();
 
 	if (caseStudiesLoading) return <LoadingSpinner size={32} />;
 
 	if (!data) return <></>;
 
 	return (
-		<ul className="flex flex-col gap-2">
+		<ul className="mb-2 flex flex-col gap-2">
 			{data.map((caseStudy, idx) => {
 				const config = {
 					...caseStudy,
@@ -70,14 +70,14 @@ const CaseStudiesFeed = () => {
 };
 
 const PostsFeed = () => {
-	const { data, isLoading: postsLoading } = api.post.getThree.useQuery();
+	const { data, isLoading: postsLoading } = api.post.getLatest.useQuery();
 
 	if (postsLoading) return <LoadingSpinner size={32} />;
 
 	if (!data) return <></>;
 
 	return (
-		<ul className="flex flex-col gap-2">
+		<ul className="mb-2 flex flex-col gap-2">
 			{data.map((post, idx) => {
 				const config = {
 					...post,
@@ -137,6 +137,11 @@ const Home = ({
 								Case Studies
 							</h1>
 							<CaseStudiesFeed />
+							<FeedCard
+								name="All Projects"
+								url="/projects"
+								description="Read all case studies"
+							/>
 						</div>
 						<div className="flex-1">
 							<h1 className="pb-4 text-sm font-semibold text-stone-500">

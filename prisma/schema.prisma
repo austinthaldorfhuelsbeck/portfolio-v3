@@ -16,7 +16,7 @@ model Post {
     slug        String   @unique
     description String   @default("")
     image       String   @default("")
-    content     String?  @db.VarChar(10000)
+    content     String?  @default("")
     published   Boolean  @default(false)
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
@@ -33,7 +33,7 @@ model CaseStudy {
     repo         String   @default("")
     demo         String   @default("")
     image        String   @default("")
-    content      String?  @db.VarChar(10000)
+    content      String?  @default("")
     published    Boolean  @default(false)
     createdAt    DateTime @default(now())
     updatedAt    DateTime @updatedAt

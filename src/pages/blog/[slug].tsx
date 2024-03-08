@@ -53,11 +53,10 @@ const PostView = (props: Post) => {
 			)}
 
 			<AnimateWrapper>
-				<h3 className="mb-3 text-xl">{props.description}</h3>
+				<h3 className="mb-3 text-xl font-bold">{props.description}</h3>
 			</AnimateWrapper>
 
 			<AnimateWrapper>
-				{/*TODO  Temporary load of content until I figure out how to read markdown or something */}
 				<div dangerouslySetInnerHTML={{ __html: props.content ?? "" }} />
 			</AnimateWrapper>
 		</div>

@@ -27,7 +27,7 @@ const Blog: NextPage = () => {
 		<>
 			{tech && (
 				<AnimateWrapper>
-					<div className="flex gap-2 text-sm font-extralight text-stone-300 ">
+					<div className="flex gap-2 text-sm font-extralight text-stone-300">
 						<ArrowLeftIcon className="my-auto h-5 w-5" />
 						<Link href="/projects">
 							<p className="hover:text-stone-100 hover:underline">
@@ -36,7 +36,7 @@ const Blog: NextPage = () => {
 						</Link>
 					</div>
 
-					<div className="flex gap-2">
+					<div className="mb-10 flex gap-2">
 						<h2 className="text-2xl font-bold tracking-tight text-stone-300 md:text-3xl">
 							{`Projects using ${tech}`}
 						</h2>
@@ -59,7 +59,7 @@ const Blog: NextPage = () => {
 				</AnimateWrapper>
 			)}
 
-			<div className="flex flex-col gap-4 pb-4 text-stone-300 sm:grid sm:grid-flow-col sm:grid-cols-2">
+			<div className="flex flex-col gap-4 pb-4 text-stone-300 sm:grid sm:grid-cols-2">
 				{data.map((study) => (
 					<Link key={study.id} href={`/projects/${study.slug}`}>
 						<AnimateWrapper>
@@ -69,7 +69,7 @@ const Blog: NextPage = () => {
 									alt={study.name}
 									width={500}
 									height={500}
-									className="aspect-video rounded-t-lg object-cover"
+									className="aspect-video w-full rounded-t-lg object-cover"
 								/>
 								<p className="p-2 text-sm">{study.name}</p>
 							</div>
