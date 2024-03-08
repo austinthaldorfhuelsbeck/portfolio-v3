@@ -1,9 +1,11 @@
+import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { type CaseStudy } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
 import type { GetStaticProps, NextPage } from "next";
 
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { LoadingPage } from "~/components/Loading";
 import { NotFoundPage } from "~/components/NotFound";
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
@@ -12,6 +14,15 @@ import { api } from "~/utils/api";
 const CaseStudyView = (props: CaseStudy) => {
 	return (
 		<div className="text-stone-400">
+			<div className="flex gap-2 text-sm font-extralight text-stone-300 ">
+				<ArrowLeftIcon className="my-auto h-5 w-5" />
+				<Link href="/case-studies">
+					<p className="hover:text-stone-100 hover:underline">
+						<em>All projects</em>
+					</p>
+				</Link>
+			</div>
+
 			<div className="my-6">
 				<h1 className="text-3xl font-extrabold text-stone-100">{props.name}</h1>
 			</div>

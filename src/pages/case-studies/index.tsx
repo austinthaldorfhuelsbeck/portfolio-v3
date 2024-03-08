@@ -21,7 +21,7 @@ const Blog: NextPage = () => {
 			<div className="flex flex-col gap-4 text-stone-300 sm:grid sm:grid-flow-col sm:grid-cols-2">
 				{data.map((study) => (
 					<Link key={study.id} href={`/case-studies/${study.slug}`}>
-						<div className="mx-auto rounded-lg bg-indigo-500/20 brightness-90 grayscale duration-300 ease-in-out hover:brightness-100 hover:grayscale-0 hover:transition-all">
+						<div className="hover:scale-102 mx-auto rounded-lg bg-indigo-500/20 brightness-90 grayscale duration-300 ease-in-out hover:brightness-100 hover:grayscale-0 hover:transition-all">
 							<Image
 								src={study.image}
 								alt={study.name}

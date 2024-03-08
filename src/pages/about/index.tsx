@@ -3,57 +3,6 @@ import { type NextPage } from "next";
 import Link from "next/link";
 import { api } from "~/utils/api";
 
-// const experiences: Experience[] = [
-// 	{
-// 		role: "Contributor",
-// 		company: "Wiki.js",
-// 		description:
-// 			"Designed a feature to sort comments, improving user interaction, using Vue.js and Node.js.",
-// 		date: "2024-03-01",
-// 	},
-// 	{
-// 		role: "Freelance Developer",
-// 		company: "Vowsuite",
-// 		description:
-// 			"Developed a CRM and hosting solution for wedding industry professionals, using Next.js and Prisma.",
-// 		date: "2023-10-01",
-// 	},
-// 	{
-// 		role: "Systems Administrator",
-// 		company: "The Seattle School",
-// 		description:
-// 			"Enhanced system security and managed the school's network infrastructure using PowerShell, C#, and bash scripting.",
-// 		date: "2022-10-01",
-// 	},
-// 	{
-// 		role: "Freelance Developer",
-// 		company: "cathyloerzel.com",
-// 		description:
-// 			"Blog website with a custom CMS, using React and Node.js with Postgres.",
-// 		date: "2021-08-01",
-// 	},
-// 	{
-// 		role: "Bootcamp Graduate",
-// 		company: "Thinkful Academy",
-// 		description:
-// 			"Completed intensive coding bootcamp, learning full-stack web development with React and Node.js.",
-// 		date: "2021-05-01",
-// 	},
-// 	{
-// 		role: "Self-Taught Programmer",
-// 		description:
-// 			"Began my self-taught journey in programming, dedicating myself to learning and mastering front-end and back-end technologies through online resources, projects, and community participation.",
-// 		date: "2018-01-01",
-// 	},
-// 	{
-// 		role: "B.A. in Audio Engineering",
-// 		company: "George Fox University",
-// 		description:
-// 			"Graduated with a Bachelor of Arts in Audio Engineering, with a focus on music production and sound design.",
-// 		date: "2013-05-01",
-// 	},
-// ];
-
 // Page
 const About: NextPage = () => {
 	const { data, isLoading: experiencesLoading } =

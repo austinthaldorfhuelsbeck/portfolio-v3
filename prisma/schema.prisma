@@ -46,6 +46,7 @@ model Experience {
     company     String
     description String
     dateStart   DateTime
+    published   Boolean  @default(false)
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
 
