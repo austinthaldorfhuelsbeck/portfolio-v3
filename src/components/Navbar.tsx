@@ -25,7 +25,10 @@ const Navbar = () => {
 				</div>
 
 				<div className="ml-auto flex">
-					<ul className="m-0 ml-auto flex list-none items-center justify-center space-x-2 space-y-0">
+					<ul
+						role="list"
+						className="m-0 ml-auto flex list-none items-center justify-center space-x-2 space-y-0"
+					>
 						{navigation.map((item, idx) => {
 							return (
 								<li

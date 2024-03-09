@@ -27,10 +27,13 @@ const addTailwindClass = () => {
 					classesToAdd = "my-5";
 					break;
 				case "li":
-					classesToAdd = "text-sm";
+					classesToAdd = "text-sm mb-1";
 					break;
 				case "img":
 					classesToAdd = "my-5 rounded-lg";
+					break;
+				case "hr":
+					classesToAdd = "my-5 border-stone-700 border-t-2";
 					break;
 			}
 

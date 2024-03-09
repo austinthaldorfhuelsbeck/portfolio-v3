@@ -17,6 +17,7 @@ const markdownToHtml = async (
 	const fullPath = path.join(
 		process.cwd(),
 		"public",
+		"markdown",
 		baseDirectory,
 		`${slug}.md`,
 	);

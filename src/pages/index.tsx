@@ -57,7 +57,7 @@ const CaseStudiesFeed = () => {
 	if (!data) return <></>;
 
 	return (
-		<ul className="m-0 mb-2 flex list-none flex-col gap-2">
+		<ul role="list" className="m-0 mb-2 flex list-none flex-col gap-2">
 			{data.map((caseStudy, idx) => {
 				const config = {
 					...caseStudy,
@@ -77,7 +77,7 @@ const PostsFeed = () => {
 	if (!data) return <></>;
 
 	return (
-		<ul className="m-0 mb-2 flex list-none flex-col gap-2">
+		<ul role="list" className="m-0 mb-2 flex list-none flex-col gap-2">
 			{data.map((post, idx) => {
 				const config = {
 					...post,
@@ -159,7 +159,7 @@ const Home = ({
 								Repos
 							</h1>
 							{repos && (
-								<ul className="m-0 flex list-none flex-col gap-2">
+								<ul role="list" className="m-0 flex list-none flex-col gap-2">
 									{repos.map((repo, idx) => {
 										const config = { ...repo, url: repo.clone_url };
 										return <FeedCard key={idx} {...config} />;
