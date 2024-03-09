@@ -47,6 +47,7 @@ model Experience {
     company     String
     description String
     dateStart   DateTime
+    href        String?  @default("")
     published   Boolean  @default(false)
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt

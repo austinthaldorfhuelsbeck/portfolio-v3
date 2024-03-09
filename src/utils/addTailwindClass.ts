@@ -11,17 +11,20 @@ const addTailwindClass = () => {
 
 			// Apply classes based on the element type
 			switch (node.tagName) {
+				case "div":
+					classesToAdd = "font-sans";
+					break;
 				case "h1":
-					classesToAdd = "my-5 text-2xl font-bold";
+					classesToAdd = "my-5 text-2xl font-bold text-stone-100";
 					break;
 				case "h2":
-					classesToAdd = "my-5 text-xl font-bold";
+					classesToAdd = "my-5 text-xl font-bold text-stone-100";
 					break;
 				case "h3":
-					classesToAdd = "my-5 text-lg font-bold";
+					classesToAdd = "my-5 text-lg font-bold text-stone-200";
 					break;
 				case "h4":
-					classesToAdd = "my-5 text-md font-bold";
+					classesToAdd = "my-5 text-md font-bold text-stone-300";
 					break;
 				case "p":
 					classesToAdd = "my-5";

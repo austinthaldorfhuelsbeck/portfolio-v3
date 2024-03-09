@@ -27,10 +27,10 @@ const Footer = () => {
 			<div className="mt-4 flex items-center justify-between">
 				<span className="hidden text-center text-sm text-stone-400 sm:inline-flex">
 					<Link
-						href="mailto:austin@thaldorfhuelsbeck.com"
-						className="rounded p-2 hover:bg-stone-800"
+						href="mailto:austin@thaldorfhuelsbeck.dev"
+						className="font- rounded p-2 hover:bg-stone-800"
 					>
-						austin@thaldorfhuelsbeck.com
+						austin@thaldorfhuelsbeck.dev
 					</Link>
 				</span>
 				<div className="ml-auto flex justify-center">

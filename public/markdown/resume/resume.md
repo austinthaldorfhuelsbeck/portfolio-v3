@@ -18,7 +18,7 @@ _August 2022 - Present_
 
 **Developer, Self-Initiated Project**
 
-Vowsuite
+[Vowsuite](https://github.com/austinthaldorfhuelsbeck/vowsuite-v2) | [Demo](https://www.vowsuite.com/)
 
 _Fall 2023 - Present_
 
@@ -27,7 +27,7 @@ _Fall 2023 - Present_
 
 **Developer, Freelance**
 
-cathyloerzel.com
+[cathyloerzel.com](https://github.com/austinthaldorfhuelsbeck/website-builder-dashboard) | [Demo](https://website-builder-dashboard.vercel.app)
 
 _Spring 2021 - Winter 2022_
 
@@ -37,7 +37,7 @@ _Spring 2021 - Winter 2022_
 
 ## Projects
 
-**[Vowsuite](https://github.com/austinthaldorfhuelsbeck/vowsuite-v2)**
+**[Vowsuite](https://github.com/austinthaldorfhuelsbeck/vowsuite-v2)** | [Demo](https://www.vowsuite.com/)
 
 _Next.js, Prisma, Tailwind_
 
@@ -45,7 +45,7 @@ _Next.js, Prisma, Tailwind_
 * Comprehensive CRM platform with SMTP integration, automated lead nurturing workflows, and customizable access for team collaboration within agencies.
 * Feature-rich website builder and multimedia hosting, including customizable media galleries that directly integrate with CRM for seamless client engagement.
 
-**[cathyLoerzel.com](https://github.com/austinthaldorfhuelsbeck/website-builder-dashboard)**
+**[cathyLoerzel.com](https://github.com/austinthaldorfhuelsbeck/website-builder-dashboard)** | [Demo](https://website-builder-dashboard.vercel.app)
 
 _React, TypeScript, Node.js, PostgreSQL_  
 
@@ -103,5 +103,3 @@ _Fall 2009 - Spring 2013_
 * Mathematical Probability
 * Linear Algebra
 * Introduction to Mathematical Reasoning
-
----
