@@ -2,6 +2,8 @@ import { postRouter } from "~/server/api/routers/post";
 import { createTRPCRouter } from "~/server/api/trpc";
 import { caseStudyRouter } from "./routers/caseStudy";
 import { experienceRouter } from "./routers/experience";
+import { randomFactRouter } from "./routers/randomFact";
+import { repoRouter } from "./routers/repo";
 import { resumeRouter } from "./routers/resume";
 
 /**
@@ -14,6 +16,8 @@ export const appRouter = createTRPCRouter({
 	experience: experienceRouter,
 	caseStudy: caseStudyRouter,
 	resume: resumeRouter,
+	randomFact: randomFactRouter,
+	repo: repoRouter,
 });
 
 // export type definition of API

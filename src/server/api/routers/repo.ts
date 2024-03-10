@@ -1,4 +1,6 @@
+import { TRPCError } from "@trpc/server";
 import axios from "axios";
+import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { type GitHubRepo, type GithubApiResponse } from "~/types";
 
 const getLatestRepos = async (
@@ -13,9 +15,18 @@ const getLatestRepos = async (
 
 		return latestRepos;
 	} catch (err) {
-		console.log(err);
+		throw new TRPCError({
+			code: "NOT_FOUND",
+			message: "Failed to fetch latest repos",
+		});
 		return null;
 	}
 };
 
-export default getLatestRepos;
+export const repoRouter = createTRPCRouter({
+	getLatest: publicProcedure.query(async () => {
+		const repos = await getLatestRepos("austinthaldorfhuelsbeck");
+
+		return repos;
+	}),
+});

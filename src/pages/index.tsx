@@ -1,35 +1,15 @@
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
-import { type InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { type FC } from "react";
 import AnimateWrapper from "~/components/AnimateWrapper";
 import { LoadingSpinner } from "~/components/Loading";
-import { type GitHubRepo } from "~/types";
 import { api } from "~/utils/api";
-import getLatestRepos from "~/utils/getLatestRepos";
-import getRandomFact from "~/utils/getRandomFact";
 
 type CardItem = {
 	name: string;
 	description: string;
 	url: string;
-};
-
-// Server-side rendering
-export const getStaticProps = async () => {
-	const ninjasApiKey = process.env.API_NINJAS_API_KEY ?? "";
-	const fact: string = await getRandomFact(ninjasApiKey);
-	const repos: GitHubRepo[] | null = await getLatestRepos(
-		"austinthaldorfhuelsbeck",
-	);
-
-	return {
-		props: {
-			fact,
-			repos,
-		},
-	};
 };
 
 const FeedCard: FC<CardItem> = ({ name, url, description }) => (
@@ -89,10 +69,11 @@ const PostsFeed = () => {
 	);
 };
 
-const Home = ({
-	repos,
-	fact,
-}: InferGetServerSidePropsType<typeof getStaticProps>) => {
+const Home = () => {
+	const { data: repos, isLoading: reposLoading } =
+		api.repo.getLatest.useQuery();
+	const { data: fact } = api.randomFact.get.useQuery();
+
 	return (
 		<div className="flex flex-col gap-8">
 			<div className="flex flex-col gap-8">
@@ -158,6 +139,7 @@ const Home = ({
 							<h1 className="pb-4 text-sm font-semibold text-stone-500">
 								Repos
 							</h1>
+							{reposLoading && <LoadingSpinner size={32} />}
 							{repos && (
 								<ul role="list" className="m-0 flex list-none flex-col gap-2">
 									{repos.map((repo, idx) => {
