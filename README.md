@@ -74,7 +74,7 @@ Follow the t3 deployment guides for [Vercel](https://create.t3.gg/en/deployment/
 Contributions are welcome. For major changes, please open an issue first. Fork the repo, create your feature branch, commit your changes, and open a pull request.
 
 ## License
-This project is licensed under the MIT License.
+Idk, this project is licensed under the MIT License.
 
 ## Credits
 Thanks to Theo Browne (@t3dotgg) for the create-t3-app framework and the "chirp" tutorial.
