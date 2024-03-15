@@ -1,29 +1,93 @@
-# Create T3 App
+# Developer Portfolio
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Credits](#credits)
+- [Screenshots](#screenshots)
+- [Contact](#contact)
 
-## What's next? How do I make an app with this?
+## Description
+This portfolio is bootstrapped with [create-t3-app](https://create.t3.gg/), leveraging [Next.js](https://nextjs.org), TypeScript, [Tailwind CSS](https://tailwindcss.com), [Prisma](https://prisma.io), and [tRPC](https://trpc.io). It features content management through markdown with [remark/rehype](https://github.com/remarkjs/remark-rehype) and [gray-matter](https://www.npmjs.com/package/gray-matter), converting markdown in the `public` directory to styled HTML.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Features
+- Projects section with case studies.
+- Blog with markdown integration for easy post management.
+- GitHub repository display.
+- Random fact feature on the homepage (optional, via API Ninjas).
+- Server-side rendering with loading indicators.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Prerequisites
+- Node.js
+- A MySQL database
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Installation
+1. Clone the repo and navigate to it.
+2. Create a `.env` file:
 
-## Learn More
+```
+DATABASE_URL=your_mysql_db_public_url
+```
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+For the random fact feature:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+```
+API_NINJAS_API_KEY=your_apininjas_api_key
+```
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+3. Install dependencies:
 
-## How do I deploy this?
+```
+npm install
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+4. Set up the database:
+
+```
+npx prisma db push
+npx prisma db generate
+```
+
+5. Start the server and client:
+
+npm start
+
+6. Launch Prisma Studio:
+
+```
+npx prisma studio
+```
+
+7. Access the portfolio at `localhost:3000` and Prisma Studio at `localhost:5555`.
+
+## Usage
+Organize content in the `public` directory. Edit markdown files in `blogs`, `markdown/posts`, `markdown/projects`, and `markdown/resume`. Customize `social` and `technologies` with your own SVG icons.
+
+Follow the t3 deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information on deploying your portfolio.
+
+## Contributing
+Contributions are welcome. For major changes, please open an issue first. Fork the repo, create your feature branch, commit your changes, and open a pull request.
+
+## License
+This project is licensed under the MIT License.
+
+## Credits
+Thanks to Theo Browne (@t3dotgg) for the create-t3-app framework and the "chirp" tutorial.
+
+## Screenshots
+
+Portfolio Overview:
+
+![Portfolio Overview](public/blog/portfolio-v3.png)
+
+Blog Section:
+
+![Blog Section](public/blog/portfolio-v3-blog.png)
+
+## Contact
+For queries, suggestions, or collaboration, reach out through GitHub. Contact information is available on the portfolio.
