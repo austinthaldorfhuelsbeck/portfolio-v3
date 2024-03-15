@@ -1,7 +1,36 @@
 # Austin Thaldorf-Huelsbeck
 
-> [GitHub @austinthaldorfhuelsbeck](https://github.com/austinthaldorfhuelsbeck)  
-> [LinkedIn @AustinHuelsbeck](https://linkedin.com/in/AustinHuelsbeck)  
+> [GitHub @austinthaldorfhuelsbeck](https://github.com/austinthaldorfhuelsbeck)
+> [LinkedIn @AustinHuelsbeck](https://linkedin.com/in/AustinHuelsbeck)
+
+---
+
+## Software Engineering Projects
+
+**[Vowsuite](https://github.com/austinthaldorfhuelsbeck/vowsuite-v2)** | [Demo](https://www.vowsuite.com/)
+
+* Dynamic server-side rendering and advanced ORM with shadcn/ui for styling and Clerk for authentication.
+* Integrated CRM features, allowing agencies to manage clients, with custom access for team collaboration.
+* Customizable website builder, allowing users to create media galleries with integrated multimedia hosting.
+
+**[Developer Portfolio](https://github.com/austinthaldorfhuelsbeck/portfolio-v3)** | [Demo](https://thaldorfhuelsbeck.dev)
+
+* MySQL with markdown integration, allowing efficient data management, and tRPC for type-safe API routes.
+* Dynamic Next.js frontend, allowing rendering with powerful libraries and frameworks like React, Tailwind.
+
+
+**[cathyLoerzel.com](https://github.com/austinthaldorfhuelsbeck/website-builder-dashboard)** | [Demo](https://website-builder-dashboard.vercel.app)
+
+
+* Vanilla Javascript blog and event calendar site, with a custom React CMS.
+* Leverages styled components for customized aesthetics, Auth0 for authentication, quill.js for rich text editing.
+
+**[Periodic Tables](https://github.com/austinthaldorfhuelsbeck/restaurant-reservation/tree/reconstruction2023)** | [Demo](https://restaurant-reservation-client-five.vercel.app)
+
+## Technical Skills
+
+* **Languages/Frameworks**: HTML, CSS, Javascript, Typescript, Python, C#, Powershell, SQL, React, Next.js, Node.js, Express, Knex, Prisma, Tailwind
+* **Tools/Skills**: Git, GitHub, VS Code, npm, pip, bash, VMWare, VS Code, data structures, web design
 
 ---
 
@@ -11,69 +40,27 @@
 
 The Seattle School
 
-_August 2022 - Present_
+_August 2022 - present_
 
-* Enhanced system security and managed the school's network infrastructure using PowerShell, C#, and bash scripting.
-* Directed the maintenance and optimization of all technology systems, ensuring high availability and security.
+* Administered the maintenance and optimization of all technology systems, ensuring adherence to data security protocols, high availability, and compliance with education information regulations for a team of 130.
+* Engineered network infrastructure management through C# and PowerShell scripting, resulting in improved system performance and a 40% reduction in security vulnerabilities.
 
 **Developer, Self-Initiated Project**
 
 [Vowsuite](https://github.com/austinthaldorfhuelsbeck/vowsuite-v2) | [Demo](https://www.vowsuite.com/)
 
-_Fall 2023 - Present_
+_October 2023 - present_
 
-* Developing a CRM and website builder for the wedding industry, featuring customizable templates and an intuitive UI for easy content management by users.
-* Implementing cutting-edge frameworks and libraries to deliver a highly customizable and user-friendly platform that can scale while maintaining stability.
+* Orchestrated the development of a cutting-edge CRM and website builder for the wedding industry, presenting diverse customizable templates and a user-friendly UI for streamlined content management and delivery.
+* Engineered a highly customizable and scalable platform by integrating Next.js, Typescript, tRPC, Tailwind, Prisma, and MySQL; optimized performance and scalability with decreased loading times.
 
 **Developer, Freelance**
 
 [cathyloerzel.com](https://github.com/austinthaldorfhuelsbeck/website-builder-dashboard) | [Demo](https://website-builder-dashboard.vercel.app)
 
-_Spring 2021 - Winter 2022_
+_May 2021 - present_
 
-* Built a blog and event calendar landing page with custom CMS, enabling non-technical users to easily manage content.
-
----
-
-## Projects
-
-**[Vowsuite](https://github.com/austinthaldorfhuelsbeck/vowsuite-v2)** | [Demo](https://www.vowsuite.com/)
-
-_Next.js, Prisma, Tailwind_
-
-* Dynamic server-side rendering and advanced ORM, enhanced with cutting-edge tools like Tailwind and shadcn/ui for styling and Clerk for secure authentication.
-* Comprehensive CRM platform with SMTP integration, automated lead nurturing workflows, and customizable access for team collaboration within agencies.
-* Feature-rich website builder and multimedia hosting, including customizable media galleries that directly integrate with CRM for seamless client engagement.
-
-**[cathyLoerzel.com](https://github.com/austinthaldorfhuelsbeck/website-builder-dashboard)** | [Demo](https://website-builder-dashboard.vercel.app)
-
-_React, TypeScript, Node.js, PostgreSQL_  
-
-* Responsive HTML/CSS/JS website with dynamic content updates through custom API using Node.js, Express, and PostgreSQL, catering to the requirements of the client.
-* React and TypeScript-based CMS enables the client to effortlessly manage blog and event content, as well as categories and topics, to dynamically influence site content.
-* Leverages styled components for customized aesthetics, Auth0 for secure authentication, axios for efficient data fetching, and quill.js for rich text editing.
-
-## Technical Skills
-
-* **Languages**: JavaScript, TypeScript, C#, Python, Bash, PowerShell
-* **Frameworks/Libraries**: Next.js, React, Node.js, Express, Prisma
-* **Tools/Platforms**: Git, GitHub, Vercel, VS Code, VMWare
-
----
-
-## Extracurriculars
-
-**Google IT Support Professional Certificate**
-
-_Fall 2022 - Winter 2023_
-
-> Network protocols, cloud computing, encryption algorithms, system administration
-
-**Self-Taught Developer**  
-
-_Spring 2018 - Present_  
-
-> Dedicated to continuous learning and application of modern web technologies, focusing on full-stack development for the web.
+* Constructed a custom site with a user-friendly CMS, powered by HTML/CSS/JS, React, Typescript, Node.js, Express, Knex, and PostgreSQL, facilitating simplified content management for non-technical users.
 
 ---
 
@@ -89,7 +76,7 @@ _December 2020 - July 2021_
 
 **George Fox University**
 
-Audio Engineering, Bachelor of Arts
+BA, Audio Engineering
 
 _Fall 2009 - Spring 2013_
 
@@ -103,3 +90,20 @@ _Fall 2009 - Spring 2013_
 * Mathematical Probability
 * Linear Algebra
 * Introduction to Mathematical Reasoning
+
+
+---
+
+## Extracurriculars
+
+**Google IT Support Professional Certificate**
+
+_Fall 2022 - Winter 2023_
+
+> Network protocols, cloud computing, encryption algorithms, system administration
+
+**Self-Taught Developer**  
+
+_Spring 2018 - present_  
+
+> Dedicated to continuous learning and application of modern web technologies, focusing on full-stack development for the web.

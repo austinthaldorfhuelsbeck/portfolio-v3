@@ -17,5 +17,3 @@ Markdown files stored in the project directory serve as the source for blog post
 The portfolio achieves its goal of providing a clean, efficient, and accessible platform for showcasing development work and insights. Its minimalistic design and functionality demonstrate a practical approach to web development, focusing on the essentials needed by developers to present their work.
 
 The open-source nature of the project invites adaptation and reuse, offering a ready-made solution for developers to create their own portfolio with minimal effort.
-
-This portfolio exemplifies how modern web technologies can be employed to meet specific user needs without unnecessary complexity.
