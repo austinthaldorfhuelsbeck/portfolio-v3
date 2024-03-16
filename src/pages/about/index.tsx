@@ -1,4 +1,5 @@
 import {
+	ArrowDownTrayIcon,
 	ClipboardDocumentIcon,
 	ClockIcon,
 	LinkIcon,
@@ -32,10 +33,12 @@ const About: NextPage = () => {
 					)}
 					{isCv ? "Show timeline" : "Show CV"}
 				</button>
-				{/* <button className="inline-flex items-center rounded-lg border border-stone-600 bg-stone-800 px-4 py-2 text-sm font-medium text-stone-400 hover:bg-stone-700 hover:text-white focus:text-stone-500 focus:outline-none focus:ring-4 focus:ring-stone-700">
-					<ArrowDownTrayIcon className="mr-2 h-4 w-4" />
-					Download CV
-				</button> */}
+				<a href="/resume.pdf" download="AustinThaldorfHuelsbeck_Resume2024">
+					<button className="inline-flex items-center rounded-lg border border-stone-600 bg-stone-800 px-4 py-2 text-sm font-medium text-stone-400 hover:bg-stone-700 hover:text-white focus:text-stone-500 focus:outline-none focus:ring-4 focus:ring-stone-700">
+						<ArrowDownTrayIcon className="mr-2 h-4 w-4" />
+						Download CV
+					</button>
+				</a>
 			</div>
 
 			{isCv && resume && (

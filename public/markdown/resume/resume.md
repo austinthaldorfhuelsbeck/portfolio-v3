@@ -1,6 +1,7 @@
 # Austin Thaldorf-Huelsbeck
 
 > [GitHub @austinthaldorfhuelsbeck](https://github.com/austinthaldorfhuelsbeck)
+
 > [LinkedIn @AustinHuelsbeck](https://linkedin.com/in/AustinHuelsbeck)
 
 ---
@@ -26,6 +27,9 @@
 * Leverages styled components for customized aesthetics, Auth0 for authentication, quill.js for rich text editing.
 
 **[Periodic Tables](https://github.com/austinthaldorfhuelsbeck/restaurant-reservation/tree/reconstruction2023)** | [Demo](https://restaurant-reservation-client-five.vercel.app)
+
+* RESTful Express API, leveraging Knex for seamless communication with a PostgreSQL database.
+* Dynamic single-page application, leveraging React Router to manage navigation smoothly.
 
 ## Technical Skills
 
@@ -100,7 +104,7 @@ _Fall 2009 - Spring 2013_
 
 _Fall 2022 - Winter 2023_
 
-> Network protocols, cloud computing, encryption algorithms, system administration
+> Focused on network protocols, cloud computing, encryption algorithms, system administration
 
 **Self-Taught Developer**  
 
