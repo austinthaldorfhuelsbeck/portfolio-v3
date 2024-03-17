@@ -13,7 +13,7 @@ _8/2022 - present_
 
 _10/2023 - present_
 
-**[Repo](https://github.com/austinthaldorfhuelsbeck/vowsuite-v2)** | [Demo](https://www.vowsuite.com/)
+**[Repo](https://github.com/austinthaldorfhuelsbeck/vowsuite-v2.1)** | [Demo](https://vowsuite-v2.vercel.app)
 
 * Orchestrated the development of a cutting-edge CRM and website builder, presenting advanced server-side rendering and ORM, plus diverse customizable templates and a user-friendly UI leveraging Tailwind and shadcn/ui.
 * Engineered a highly customizable and scalable platform by integrating Next.js, Typescript, tRPC, Tailwind, Prisma, and MySQL; optimized performance and scalability for 50% decreased loading times.
@@ -60,7 +60,7 @@ _5/2021 - 6/2021_
 
 Certificate, Software Engineering  
 
-_December 2020 - July 2021_
+_12/2020 - 7/2021_
 
 > Completed 6-month bootcamp, achieving proficiency in JavaScript, HTML5, CSS3, React.js, Node.js, PostgreSQL, RESTful APIs, responsive design, and modern software development practices.
 
@@ -68,7 +68,7 @@ _December 2020 - July 2021_
 
 BA, Audio Engineering
 
-_Fall 2009 - Spring 2013_
+_8/2009 - 5/2013_
 
 > Minor: Mathematics
 
@@ -87,13 +87,13 @@ _Fall 2009 - Spring 2013_
 
 **Google IT Support Professional Certificate**
 
-_Fall 2022 - Winter 2023_
+_9/2022 - 1/2023_
 
 > Focused on network protocols, cloud computing, encryption algorithms, system administration
 
 **Self-Taught Developer**  
 
-_Spring 2018 - present_  
+_2018 - present_
 
 > Dedicated to continuous learning and application of modern web technologies, focusing on full-stack development for the web.
 

@@ -6,7 +6,7 @@ import markdownToHtml from "~/utils/markdownToHtml";
 export const postRouter = createTRPCRouter({
 	getLatest: publicProcedure.query(async ({ ctx }) => {
 		const posts = await ctx.db.post.findMany({
-			take: 2,
+			take: 3,
 			where: {
 				published: true,
 			},
