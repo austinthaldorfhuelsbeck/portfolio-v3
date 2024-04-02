@@ -33,7 +33,7 @@ _7/2021 - present_
 
 **[Repo](https://github.com/austinthaldorfhuelsbeck/website-builder-dashboard)** | [Demo](https://website-builder-dashboard.vercel.app)
 
-* Designed and deployed an intuitive CMS powered by React, TypeScript, Node.js, Express, Knex, and PostgreSQL, streamlining content management for non-technical users..
+* Designed and deployed an intuitive CMS powered by React, TypeScript, Node.js, Express, Knex, and PostgreSQL, streamlining content management for non-technical users.
 * Leveraged powerful libraries like styled components and quill.js for customized aesthetics and rich text editing, significantly improving user experience metrics.
 
 **Developer, Bootcamp Project** | Periodic Tables

@@ -19,3 +19,5 @@ Vowsuite incorporates Clerk for authentication, supporting secure access control
 While still under development, Vowsuite leverages modern development practices and a selection of advanced technologies to build its core functionalities. This includes dynamic server-side rendering for fast load times, comprehensive form validation and error handling for robust user interactions, and flexible theming for personalized user experiences.
 
 The project's current state demonstrates the integration of these technologies to lay the groundwork for a platform that can support wedding professionals in managing their businesses and online presence effectively. The development process remains focused on creating a functional, secure, and user-friendly platform.
+
+![Vowsuite Studio](/blog/vowsuite-dashboard.png)

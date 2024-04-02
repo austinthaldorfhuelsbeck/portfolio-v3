@@ -93,7 +93,7 @@ const Home = () => {
 
 								<p>
 									I&#39;m currently working on{" "}
-									<Link href="/projects/vowsuite-v2" className="underline">
+									<Link href="/projects/vowsuite" className="underline">
 										<strong>Vowsuite</strong>
 									</Link>
 									, a <strong>CRM and hosting solution</strong> created for
